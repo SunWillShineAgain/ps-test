@@ -143,6 +143,14 @@
       "role": "cook",
       "phone": "+7 (213) 321-3212",
       "birthday": "01.09.2024"
+    },
+    {
+      "id": "dK7GYPArUaZVx1KW24Gde",
+      "name": "Дмитрий",
+      "isArchive": false,
+      "role": "cook",
+      "phone": "+7 (800) 555-3535",
+      "birthday": "15.08.2024"
     }
   ]
 }

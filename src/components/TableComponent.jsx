@@ -42,6 +42,7 @@ const TableComponent = ({ users }) => {
 					open={isModalOpen}
 					onCancel={() => setIsModalOpen(false)}
 					footer={null}
+					width={320}
 				>
 					<NewUser
 						register={register}

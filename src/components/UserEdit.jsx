@@ -54,7 +54,7 @@ const UserEdit = () => {
 					</div>
 					<h3>Изменить пользователя {user?.name}</h3>
 					<p>Введите новые данные:</p>
-					<form onSubmit={handleSubmit(submitHandler)}>
+					<form className='form__user' onSubmit={handleSubmit(submitHandler)}>
 						<div className='form__row'>
 							<label>
 								Имя:

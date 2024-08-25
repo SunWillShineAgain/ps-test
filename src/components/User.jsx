@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { useNavigate, useParams } from 'react-router-dom'
+import { Link, useNavigate, useParams } from 'react-router-dom'
 import { USERS_URL } from '../utils/consts'
 import axios from 'axios'
 import { Button } from 'antd'
@@ -24,7 +24,10 @@ const User = () => {
 	return (
 		<>
 			{error ? (
-				<p>{error}</p>
+				<p>
+					{error}. Пользователя с таким ID не существует.{' '}
+					<Link to='/'>Вернуться на главную</Link>
+				</p>
 			) : (
 				<div className='user'>
 					<div className='user__buttons'>
@@ -43,7 +46,7 @@ const User = () => {
 					<h3>Информация о пользователе {user?.name}</h3>
 					<div className='user__table'>
 						<div className='user__table-row'>
-							{Object.keys(user)?.map(u => (
+							{Object.keys(user).map(u => (
 								<p className='user__table-cell' key={u}>
 									{u}
 								</p>
