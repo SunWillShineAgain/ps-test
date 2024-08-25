@@ -1,0 +1,151 @@
+@import './variables.scss';
+.filters {
+	display: flex;
+	gap: 12px;
+}
+
+.top {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 16px;
+	gap: 12px;
+}
+
+.table {
+	width: 100%;
+	border-collapse: collapse;
+	overflow: hidden;
+	border-radius: 8px;
+	-webkit-border-radius: 8px;
+	-moz-border-radius: 8px;
+	-ms-border-radius: 8px;
+	-o-border-radius: 8px;
+
+	tr,
+	th {
+		position: relative;
+		padding: 10px;
+	}
+
+	th:first-child,
+	th:last-child {
+		cursor: pointer;
+
+		&.up::after {
+			transform: rotateX(0);
+			-webkit-transform: rotateX(0);
+			-moz-transform: rotateX(0);
+			-ms-transform: rotateX(0);
+			-o-transform: rotateX(0);
+		}
+
+		&.down::after {
+			transform: rotateX(180deg);
+			-webkit-transform: rotateX(180deg);
+			-moz-transform: rotateX(180deg);
+			-ms-transform: rotateX(180deg);
+			-o-transform: rotateX(180deg);
+		}
+
+		&::after {
+			content: '↑';
+			position: absolute;
+			right: 0;
+		}
+	}
+
+	tr {
+		transition: background-color 0.2s ease;
+		-webkit-transition: background-color 0.2s ease;
+		-moz-transition: background-color 0.2s ease;
+		-ms-transition: background-color 0.2s ease;
+		-o-transition: background-color 0.2s ease;
+	}
+
+	tr:not(:last-child) {
+		border-bottom: 1px solid #2c2c2c;
+	}
+
+	td {
+		white-space: nowrap;
+	}
+
+	td:not(:first-child) {
+		text-align: center;
+		padding: 10px;
+	}
+
+	:not(thead) tr {
+		cursor: pointer;
+	}
+
+	:not(thead) tr:hover {
+		background-color: #313131;
+	}
+}
+
+.modal__footer {
+	display: flex;
+	justify-content: end;
+	gap: 8px;
+	margin-top: 8px;
+}
+
+.user {
+	&__buttons {
+		display: flex;
+		gap: 12px;
+		margin-bottom: 12px;
+	}
+
+	&__table {
+		display: flex;
+		margin-top: 12px;
+
+		p {
+			border: 1px solid white;
+			padding: 10px;
+		}
+	}
+}
+
+form {
+	.form {
+		&__row {
+			padding: 10px 0;
+			display: flex;
+			gap: 8px;
+
+			label {
+				display: flex;
+				align-items: center;
+				gap: 8px;
+			}
+		}
+	}
+
+	.btn {
+		color: #fff;
+		background: #36a500;
+		padding: 4px 15px;
+		border-radius: 6px;
+		height: 32px;
+		outline: none;
+		border: none;
+		cursor: pointer;
+		margin-top: 12px;
+	}
+}
+
+@media (max-width: $breakpoint_md) {
+	.table__wrap {
+		overflow-x: scroll;
+	}
+}
+
+@media (max-width: $breakpoint_sm) {
+	.top {
+		flex-direction: column;
+	}
+}
